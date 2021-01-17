@@ -11,7 +11,7 @@ function setup () {
 
     grafico = createGraphics(600, 600)
 
-    grafico.fill("#f3c043")
+    grafico.fill("#000000")
     grafico.textFont(font)
     grafico.textSize(800)
     grafico.textAlign(CENTER, CENTER)
@@ -19,7 +19,7 @@ function setup () {
 }
 
 function draw() {
-    background("#e84e3c")
+    background("#ffffff")
 
     const tileSize = 50
 
