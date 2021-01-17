@@ -1,15 +1,2 @@
 @import "reset";
 
-body {
-    color:#000;
-    background-color: #ecf072;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-.p5Canvas {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
