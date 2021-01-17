@@ -1,27 +1,47 @@
 let font
-let graphic
+let grafico
 
-function preload () {
-    font = loadFont("assets/spacegrotesk-medium.otf")
+function preload(){
+    font = loadFont('assets/spacegrotesk-medium.otf')
 }
 
+function setup () {
+    createCanvas(600, 600)
 
-function setup() {
-    createCanvas(500, 500)
 
-    graphic = createGraphics(500, 500)
-    graphic.textSize(400)
-    graphic.fill('#ef5236')
-    graphic.textFont(font)
-    graphic.textAlign(CENTER, CENTER)
-    graphic.text('01', width/2, width/2)
+    grafico = createGraphics(600, 600)
+
+    grafico.fill("#f3c043")
+    grafico.textFont(font)
+    grafico.textSize(800)
+    grafico.textAlign(CENTER, CENTER)
+    grafico.text("a", 300, 240)
 }
 
 function draw() {
-    background('#ecf072')
+    background("#e84e3c")
 
-    let val = sin(frameCount * 0.03) * 250
+    const tileSize = 50
 
-    copy(graphic, 0, 0, 500, 500, 0, 0, 250 + val, 500)
-    copy(graphic, 0, 0, 500, 500, 250 + val, 0, 250 - val, 500)
+    for (let x = 0; x < 12; x = x + 1) {
+
+        for (let y = 0; y < 12; y = y + 1) {
+            const distorsion = sin(frameCount * 0.05 + x * 0.5 + y * 0.3) * 50
+
+            //source
+            const sx = x * tileSize + distorsion
+            const sy = y * tileSize
+            const sw = tileSize
+            const sh = tileSize
+            
+            //destination
+            const dx = x * tileSize 
+            const dy = y * tileSize
+            const dw = tileSize
+            const dh = tileSize
+
+            image(grafico,  dx, dy, dw, dh, sx, sy, sw,sh)
+        }
+
+    }
 }

@@ -1,2 +1,12 @@
 @import "reset";
 
+body {
+    background-color: #e84e3c;
+}
+
+.p5Canvas {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
